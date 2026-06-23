@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitchen Portfolio — MK Interiors</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root{
+    --bg:#F7F5F0; --surface:#FFFFFF; --ink:#232220; --ink-dim:#6B6760;
+    --forest:#3F5D54; --forest-bright:#4F7468; --line:rgba(35,34,32,0.12);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  h1,h2{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; }
+  .eyebrow{ font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--forest); }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+
+  nav{ border-bottom:1px solid var(--line); padding:24px 0; }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .logo{ font-family:'Fraunces', serif; font-weight:600; font-size:19px; display:flex; align-items:center; gap:9px; }
+  .logo .mark{ width:9px; height:9px; border-radius:50%; background:var(--forest); }
+  .back{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.05em; color:var(--ink-dim); border-bottom:1px solid var(--line); padding-bottom:2px; }
+  .back:hover{ color:var(--ink); border-color:var(--ink-dim); }
+
+  header.head{ padding:64px 0 48px; }
+  header.head h1{ font-size:clamp(34px,5vw,52px); margin:14px 0 14px; }
+  header.head p{ color:var(--ink-dim); max-width:480px; font-size:16.5px; }
+
+  .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; padding-bottom:90px; }
+  @media (max-width:720px){ .gallery{ grid-template-columns:1fr; } }
+  figure{ margin:0; background:var(--surface); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  figure img{ width:100%; height:340px; object-fit:cover; display:block; }
+  figcaption{ padding:16px 20px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ink-dim); letter-spacing:0.03em; }
+
+  .floorplan-section{ padding-bottom:60px; }
+  .floorplan-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:4px;
+    padding:28px 28px 8px;
+  }
+  .floorplan-card .fp-head{ margin-bottom:18px; }
+  .floorplan-card .fp-head h2{ font-size:24px; margin-top:8px; }
+  .floorplan-card .fp-head p{ color:var(--ink-dim); font-size:14.5px; margin-top:8px; max-width:560px; }
+  .floorplan-svg-wrap{ display:flex; justify-content:center; padding:10px 0 4px; }
+  .floorplan-svg-wrap svg{ max-width:100%; height:auto; }
+  .fp-note{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-dim);
+    border-top:1px solid var(--line); padding:16px 0 22px; letter-spacing:0.02em;
+  }
+
+  footer{ border-top:1px solid var(--line); padding:30px 0 44px; }
+  footer p{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ink-dim); letter-spacing:0.04em; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><span class="mark"></span>MK Interiors</div>
+    <a class="back" href="mk-interiors.html">← Back to site</a>
+  </div>
+</nav>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow">Room 01 — Portfolio</span>
+    <h1>Kitchen projects.</h1>
+    <p>A closer look at recent kitchen layouts — work triangles, storage walls, and islands built around how each family actually cooks.</p>
+  </div>
+</header>
+
+<div class="wrap floorplan-section">
+  <div class="floorplan-card">
+    <div class="fp-head">
+      <span class="eyebrow">Concept Plan</span>
+      <h2>Digitized floor plan.</h2>
+      <p>Cleaned up from the studio's hand-marked sketch — kitchen, living, and bedroom zones laid out at their noted dimensions.</p>
+    </div>
+    <div class="floorplan-svg-wrap">
+      <svg viewBox="0 0 460 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digitized studio floor plan">
+        <!-- outer walls -->
+        <polyline points="40,40 320,40 320,200 360,200 360,460 400,460 400,720 40,720 40,40"
+          fill="#FFFFFF" stroke="#232220" stroke-width="3" stroke-linejoin="miter"/>
+
+        <!-- entry door notch -->
+        <line x1="40" y1="56" x2="40" y2="100" stroke="#FFFFFF" stroke-width="3"/>
+        <path d="M40,56 A44,44 0 0 1 84,100" fill="none" stroke="#6B6760" stroke-width="1.2" stroke-dasharray="3,3"/>
+        <text x="50" y="78" font-family="JetBrains Mono, monospace" font-size="10" fill="#3F5D54" transform="rotate(-90 50 78)">ENTRY</text>
+
+        <!-- top section divider: kitchen | nook -->
+        <line x1="220" y1="40" x2="220" y2="150" stroke="#232220" stroke-width="2"/>
+        <line x1="40" y1="150" x2="320" y2="150" stroke="#232220" stroke-width="2"/>
+
+        <!-- kitchen L-counter (accent) -->
+        <path d="M50,50 H160 V90 H120 V190" fill="none" stroke="#3F5D54" stroke-width="5" stroke-linecap="square"/>
+        <text x="60" y="120" font-family="Fraunces, serif" font-size="15" fill="#232220">Kitchen</text>
+        <text x="60" y="138" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6760">approx. 7' x 5'</text>
+
+        <!-- nook -->
+        <text x="240" y="80" font-family="Fraunces, serif" font-size="14" fill="#232220">Nook</text>
+        <text x="240" y="98" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6760">5' x 4'</text>
+
+        <!-- mid divider -->
+        <line x1="40" y1="200" x2="320" y2="200" stroke="#232220" stroke-width="2"/>
+        <text x="330" y="160" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6760">10'-0" wide</text>
+
+        <!-- living room -->
+        <text x="60" y="330" font-family="Fraunces, serif" font-size="20" fill="#232220">Living Room</text>
+        <text x="60" y="352" font-family="JetBrains Mono, monospace" font-size="12" fill="#6B6760">approx. 9' x 13'</text>
+        <text x="368" y="335" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6760" transform="rotate(90 368 335)">9' x 13'</text>
+
+        <!-- divider before bedroom wing -->
+        <line x1="40" y1="460" x2="400" y2="460" stroke="#232220" stroke-width="2"/>
+        <line x1="150" y1="460" x2="150" y2="650" stroke="#232220" stroke-width="2"/>
+        <line x1="40" y1="560" x2="150" y2="560" stroke="#232220" stroke-width="2"/>
+
+        <!-- bathroom -->
+        <text x="55" y="500" font-family="Fraunces, serif" font-size="13" fill="#232220">Bath</text>
+        <text x="55" y="518" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#6B6760">4' x 5'</text>
+
+        <!-- closet -->
+        <text x="55" y="600" font-family="Fraunces, serif" font-size="13" fill="#232220">Closet</text>
+        <text x="55" y="618" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#6B6760">4' x 4'</text>
+
+        <!-- bedroom -->
+        <text x="195" y="540" font-family="Fraunces, serif" font-size="19" fill="#232220">Bedroom</text>
+        <text x="195" y="562" font-family="JetBrains Mono, monospace" font-size="12" fill="#6B6760">approx. 12' x 13'</text>
+        <text x="408" y="590" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B6760" transform="rotate(90 408 590)">12' x 13'</text>
+
+        <!-- utility / stair hatch -->
+        <line x1="40" y1="650" x2="400" y2="650" stroke="#232220" stroke-width="2"/>
+        <rect x="150" y="650" width="120" height="70" fill="none" stroke="#232220" stroke-width="1.5"/>
+        <g stroke="#232220" stroke-width="1">
+          <line x1="155" y1="655" x2="265" y2="715"/>
+          <line x1="155" y1="675" x2="245" y2="715"/>
+          <line x1="155" y1="695" x2="225" y2="715"/>
+          <line x1="175" y1="655" x2="265" y2="695"/>
+          <line x1="195" y1="655" x2="265" y2="675"/>
+        </g>
+        <text x="155" y="745" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#6B6760">Utility / Stair</text>
+      </svg>
+    </div>
+    <p class="fp-note">Digitized from the studio's hand sketch — room labels and approximate dimensions reflect our best reading of the original. Flag anything that needs correcting and it'll be adjusted.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="gallery">
+    <figure>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1764526624453-db32c24eca55?w=1200&q=80&auto=format&fit=crop" alt="Kitchen with wooden cabinets and island">
+      <figcaption>Wooden cabinetry, full-height island</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1749374848450-34bfa8600ecd?w=1200&q=80&auto=format&fit=crop" alt="Kitchen island in natural light">
+      <figcaption>Island seating, natural light</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1759239572496-4ec13e7643d6?w=1200&q=80&auto=format&fit=crop" alt="Kitchen with light wood countertops">
+      <figcaption>Light wood counters, open shelving</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1759238136854-913e5e383308?w=1200&q=80&auto=format&fit=crop" alt="Kitchen island with sink and faucet">
+      <figcaption>Marble island, integrated sink</figcaption>
+    </figure>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap"><p>MK INTERIORS — KIRAN M, PRINCIPAL DESIGNER</p></div>
+</footer>
+
+</body>
+</html>
